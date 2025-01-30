@@ -3,7 +3,7 @@ public class ZooManagement {
     public static void main(String[] args) {
         // int nbrCages =20;
         // String zooName="my zoo";
-        int nbrCages=0 ;
+        int nbrCages = 0;
         String zooName;
         Scanner myObj = new Scanner(System.in);
         do {
@@ -15,6 +15,6 @@ public class ZooManagement {
             System.out.println("saisir le nombre de cages: ");
             nbrCages = myObj.nextInt();
         } while (nbrCages <= 0);
-        System.out.println(zooName+ " comporte "+ nbrCages+ " cages");
+        System.out.println(zooName + " comporte " + nbrCages + " cages");
     }
 }
