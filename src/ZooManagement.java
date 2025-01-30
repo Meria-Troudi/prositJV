@@ -1,20 +1,21 @@
 import java.util.Scanner;
 public class ZooManagement {
     public static void main(String[] args) {
-        // int nbrCages =20;
-        // String zooName="my zoo";
-        int nbrCages = 0;
-        String zooName;
-        Scanner myObj = new Scanner(System.in);
-        do {
-            System.out.println("saisir le nom du zoo: ");
-            zooName = myObj.nextLine().trim();
-        } while (zooName.isEmpty());
 
-        do {
-            System.out.println("saisir le nombre de cages: ");
-            nbrCages = myObj.nextInt();
-        } while (nbrCages <= 0);
-        System.out.println(zooName + " comporte " + nbrCages + " cages");
-    }
+        Animal lion = new Animal("Felidae","Simba", 5, true);
+        Zoo myZoo = new Zoo("Safari Park", "Tunis", 10);
+        myZoo.displayZoo();
+        System.out.println(myZoo);
+        System.out.println(lion);
+       /* Animal lion = new Animal();
+        lion.family = "Felidae";
+        lion.name = "Simba";
+        lion.age = 5;
+        lion.isMammal = true;
+        Zoo myZoo = new Zoo();
+        myZoo.name = "Safari Park";
+        myZoo.city = "Tunis";
+        myZoo.nbrCages = 10;
+        */
+}
 }
