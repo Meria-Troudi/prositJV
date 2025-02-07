@@ -1,11 +1,11 @@
 public class Zoo {
-    Animal[] animals = new Animal[25]; // Max 25 animals
+    Animal[] animals ;
     String name;
     String city;
     int nbrCages;
   Zoo(){}
     public Zoo(String name, String city, int nbrCages) {
-        animals = new Animal[nbrCages];
+        animals = new Animal[25];
         this.name = name;
         this.city = city;
         this.nbrCages = nbrCages;
