@@ -7,6 +7,7 @@ public class ZooManagement {
         myZoo.displayZoo();
         System.out.println(myZoo);
         System.out.println(lion);
+
        /* Animal lion = new Animal();
         lion.family = "Felidae";
         lion.name = "Simba";
