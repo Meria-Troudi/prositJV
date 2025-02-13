@@ -44,8 +44,7 @@ public class Zoo {
         return true;
     }
     boolean isZooFull() {
-
-        return nbrAnimals == NUMBER_OF_CAGES;
+        return nbrAnimals >= NUMBER_OF_CAGES;
     }
      static Zoo comparerZoo(Zoo z1, Zoo z2) {
            if (z1.nbrAnimals > z2.nbrAnimals) {
