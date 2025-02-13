@@ -21,6 +21,6 @@ public class ZooManagement {
 
         Zoo Zoo2 = new Zoo("Z park ", "Carthage");
         Zoo biggerZoo = Zoo.comparerZoo(myZoo, Zoo2);
-        System.out.println("entities.tn.esprit.gestionzoo.entities.Zoo with more animals: " + biggerZoo.getName());
+        System.out.println("Zoo with more animals: " + biggerZoo.getName());
 }
 }

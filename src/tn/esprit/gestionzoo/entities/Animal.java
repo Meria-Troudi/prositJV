@@ -31,6 +31,6 @@ public class Animal {
     public void setMammal(boolean isMammal) {this.isMammal = isMammal;}
 
     public String toString() {
-        return "tn.esprit.gestionzoo.entities.Animal Name:" + this.name +", Family:" + this.family + ", Age:" + this.age + ", Mammal:" + this.isMammal;
+        return "Animal Name:" + this.name +", Family:" + this.family + ", Age:" + this.age + ", Mammal:" + this.isMammal;
     }
 }

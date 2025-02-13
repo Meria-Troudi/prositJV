@@ -20,7 +20,7 @@ public class Zoo {
     public String getName(){return name;}
     public void setName(String name){
         if(name.isEmpty())
-            System.out.println("Can not set an empty Name to the entities.tn.esprit.gestionzoo.entities.Zoo.");
+            System.out.println("Zoo name cannot be empty.");
         else
             this.name = name;
     }
@@ -32,11 +32,11 @@ public class Zoo {
 
     public boolean addAnimal(Animal animal){
         if (isZooFull()) {
-            System.out.println("entities.tn.esprit.gestionzoo.entities.Zoo is full! Cannot add more animals.");
+            System.out.println("Zoo is full! Cannot add more animals.");
             return false;
         }
         if (searchAnimal(animal) != -1) {
-            System.out.println("tn.esprit.gestionzoo.entities.Animal " + animal.getName()+ " already exists.");
+            System.out.println( animal.getName()+ " already exists.");
             return false;
         }
         animals[nbrAnimals] = animal;
@@ -75,7 +75,6 @@ public class Zoo {
       System.out.println("Name:" + name+"\nCity:" + city+"\nNumber of Cages:" +NUMBER_OF_CAGES );
     }
     public String toString() {
-
-        return "entities.tn.esprit.gestionzoo.entities.Zoo name=" + name + ", city=" + city + ", nbrCage=" + NUMBER_OF_CAGES ;
+        return "name=" + name + ", city=" + city + ", nbrCage=" + NUMBER_OF_CAGES ;
     }
 }
