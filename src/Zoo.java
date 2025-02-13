@@ -2,16 +2,16 @@ public class Zoo {
     Animal[] animals ;
     String name;
     String city;
-    int nbrAnimals;
+    int nbrAnimals =0;
     static final int NUMBER_OF_CAGES = 25;
 
     public Zoo(String name, String city) {
-        animals = new Animal[25];
+        animals = new Animal[NUMBER_OF_CAGES];
         this.name = name;
         this.city = city;
     }
     public boolean addAnimal(Animal animal){
-        if (nbrAnimals < animals.length) {
+        if (this.nbrAnimals < NUMBER_OF_CAGES) {
             if (searchAnimal(animal) == -1) {
                 animals[nbrAnimals] = animal;
             nbrAnimals++;
@@ -21,7 +21,7 @@ public class Zoo {
                 return false;
             }
         }else {
-            System.out.println("Zoo is at full capacity. Cannot add more animals.");
+            System.out.println("Zoo is full! Cannot add more animals.");
             return false;
         }
     }
@@ -30,8 +30,7 @@ public class Zoo {
                if (animals[i].name.equals(animal.name)) {
                    return i;
                }
-           }
-           return -1;
+           }return -1;
     }
     public boolean removeAnimal(Animal animal){
         int index= searchAnimal(animal);
@@ -45,6 +44,7 @@ public class Zoo {
         return true;
     }
     boolean isZooFull() {
+
         return nbrAnimals == NUMBER_OF_CAGES;
     }
      static Zoo comparerZoo(Zoo z1, Zoo z2) {
@@ -58,6 +58,7 @@ public class Zoo {
       System.out.println("Name:" + name+"\nCity:" + city+"\nNumber of Cages:" +NUMBER_OF_CAGES );
     }
     public String toString() {
+
         return "Zoo name=" + name + ", city=" + city + ", nbrCage=" + NUMBER_OF_CAGES ;
     }
 }
