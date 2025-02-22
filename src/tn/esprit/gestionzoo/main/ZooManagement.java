@@ -20,7 +20,7 @@ public class ZooManagement {
         System.out.println("Removing tiger: " + myZoo.removeAnimal(tiger));
 
         Zoo Zoo2 = new Zoo("Z park ", "Carthage");
-        Zoo biggerZoo = Zoo.comparerZoo(myZoo, Zoo2);
+        Zoo biggerZoo = myZoo.comparerZoo(myZoo, Zoo2);
         System.out.println("Zoo with more animals: " + biggerZoo.getName());
 }
 }
