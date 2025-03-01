@@ -6,11 +6,32 @@ public class Zoo {
     private String city;
     private int nbrAnimals =0;
     static final int NUMBER_OF_CAGES = 25;
-
+    private Aquatic[] aquaticAnimals;
+    private int nbrAqA = 0;
     public Zoo(String name, String city) {
         animals = new Animal[NUMBER_OF_CAGES];
         this.name = name;
         this.city = city;
+        aquaticAnimals = new Aquatic[10];
+    }
+    public float maxPenguinSwimmingDepth(){
+        float maxDepth= 0.0f;
+        for (int i = 0; i < nbrAqA; i++) {
+            if (aquaticAnimals[i] instanceof Penguin p) {
+                if (p.getSwimmingDepth() > maxDepth  )
+                    maxDepth = p.getSwimmingDepth();
+            }
+        }
+        return maxDepth;
+    }
+    public void addAquaticAnimal(Aquatic aquatic){
+        aquaticAnimals[nbrAqA] = aquatic;
+        nbrAqA++;
+
+    }
+    public Aquatic[] getAquaticAnimals() {return aquaticAnimals;}
+    public void setAquaticAnimals(Aquatic[] aquaticAnimal) {
+        this.aquaticAnimals = aquaticAnimal;
     }
     public Animal[] getAnimals() {return animals;}
     public void setAnimals(Animal[] animals) {
@@ -57,7 +78,7 @@ public class Zoo {
         for (int i = index; i < nbrAnimals; i++) {
             animals[i] = animals[i + 1];
         }
-        animals[nbrAnimals] = null;
+        animals[nbrAnimals-1] = null;
         this.nbrAnimals--;
         return true;
     }
