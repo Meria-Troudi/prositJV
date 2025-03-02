@@ -10,15 +10,23 @@ public class ZooManagement {
         System.out.println("Ajout de lion : " + myZoo.addAnimal(lion));
         System.out.println("Ajout de tiger : " + myZoo.addAnimal(tiger));
         System.out.println("Ajout de fox : " + myZoo.addAnimal(fox));
+
         Dolphin d1= new Dolphin("Mammal","Dolphin",15,true,"ocean",60.0f);
         Penguin p1= new Penguin("Mammal","Penguin",14,true,"ocean",50.0f);
+        Dolphin d2= new Dolphin("Mammal","Dolphin",15,true,"ocean",82.0f);
+        Penguin p2= new Penguin("Mammal","Penguin",14,true,"ocean",30.0f);
+        Penguin p3= new Penguin("Mammal","Penguin",14,true,"ocean",88.0f);
+
         myZoo.addAquaticAnimal(d1);
         myZoo.addAquaticAnimal(p1);
-        for (int i=0; i<10; i++){
-            Aquatic[] aquatics = myZoo.getAquaticAnimals();
-            aquatics[i].swim();
+        myZoo.addAquaticAnimal(d2);
+        myZoo.addAquaticAnimal(p2);
+        myZoo.addAquaticAnimal(p3);
+        for (int i=0; i<myZoo.getNbrAqA(); i++){
+            myZoo.getAquaticAnimals()[i].swim();
         }
-
+        System.out.println("Max swimming depth of penguins: " + myZoo.maxPenguinSwimmingDepth());
+        myZoo.displayNumberOfAquaticsByType();
         /*
 
         Aquatic aquatic = new Aquatic();

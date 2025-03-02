@@ -14,6 +14,13 @@ public class Zoo {
         this.city = city;
         aquaticAnimals = new Aquatic[10];
     }
+
+    public int getNbrAqA() {
+        return nbrAqA;
+    }
+    public void setNbrAqA(int nbrAqA) {
+        this.nbrAqA = nbrAqA;
+    }
     public float maxPenguinSwimmingDepth(){
         float maxDepth= 0.0f;
         for (int i = 0; i < nbrAqA; i++) {
@@ -24,9 +31,27 @@ public class Zoo {
         }
         return maxDepth;
     }
+    public void displayNumberOfAquaticsByType(){
+        int nbd=0;
+        int nbp=0;
+        for(Aquatic a:aquaticAnimals){
+            if (a instanceof Penguin){
+                nbp++;
+            }else if(a instanceof Dolphin){
+                nbd++;
+            }
+        }
+        System.out.println("Number of Dolphins: " + nbd);
+        System.out.println("Number of Penguins: " + nbp);
+    }
     public void addAquaticAnimal(Aquatic aquatic){
-        aquaticAnimals[nbrAqA] = aquatic;
-        nbrAqA++;
+        if( nbrAqA<10){
+            aquaticAnimals[nbrAqA]=aquatic ;
+            nbrAqA++;
+        }
+        else{
+            System.out.println("tableau Plein");
+        }
 
     }
     public Aquatic[] getAquaticAnimals() {return aquaticAnimals;}
