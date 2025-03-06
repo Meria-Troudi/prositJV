@@ -1,37 +1,32 @@
 package tn.esprit.gestionzoo.main;
 import tn.esprit.gestionzoo.entities.*;
-
+import tn.esprit.gestionzoo.exceptions.*;
 public class ZooManagement {
     public static void main(String[] args) {
         Zoo myZoo = new Zoo("Safari Park", "Tunis");
         Animal lion = new Animal("Felidae","Simba", 5, true);
         Animal tiger = new Animal("tiger", "lili", 6, true);
         Animal fox = new Animal("fox", "kurama", 6, true);
-        System.out.println("Ajout de lion : " + myZoo.addAnimal(lion));
-        System.out.println("Ajout de tiger : " + myZoo.addAnimal(tiger));
-        System.out.println("Ajout de fox : " + myZoo.addAnimal(fox));
-
         Dolphin d1= new Dolphin("Mammal","Dolphin",15,true,"ocean",60.0f);
         Penguin p1= new Penguin("Mammal","Penguin",14,true,"ocean",50.0f);
-        Dolphin d2= new Dolphin("Mammal","Dolphin",15,true,"ocean",82.0f);
-        Penguin p2= new Penguin("Mammal","Penguin",14,true,"ocean",30.0f);
-        Penguin p3= new Penguin("Mammal","Penguin",14,true,"ocean",88.0f);
-
-        myZoo.addAquaticAnimal(d1);
-        myZoo.addAquaticAnimal(p1);
-        myZoo.addAquaticAnimal(d2);
-        myZoo.addAquaticAnimal(p2);
-        myZoo.addAquaticAnimal(p3);
+        try {
+            myZoo.addAnimal(lion);
+            myZoo.addAnimal(tiger);
+            myZoo.addAnimal(fox);
+            myZoo.addAnimal(d1);
+        }catch (ZooFullException e){
+            System.out.println(e.getMessage());
+        }catch (InvalidAgeException ex){
+            System.out.println(ex.getMessage());
+        }
 
         for (int i=0; i<myZoo.getNbrAqA(); i++){
             myZoo.getAquaticAnimals()[i].swim();
         }
         System.out.println("Max swimming depth of penguins: " + myZoo.maxPenguinSwimmingDepth());
         myZoo.displayNumberOfAquaticsByType();
-        System.out.println(d1.equals(d2));
 
         /*
-
         Aquatic aquatic = new Aquatic();
         Terrestrial terrestrial = new Terrestrial();
         Dolphin d = new Dolphin();

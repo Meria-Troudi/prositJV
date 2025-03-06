@@ -1,11 +1,12 @@
 package tn.esprit.gestionzoo.entities;
-
+import tn.esprit.gestionzoo.exceptions.InvalidAgeException;
+import tn.esprit.gestionzoo.exceptions.ZooFullException;
 public class Zoo {
     private Animal[] animals ;
     private String name;
     private String city;
     private int nbrAnimals =0;
-    static final int NUMBER_OF_CAGES = 25;
+    static final int NUMBER_OF_CAGES = 3;
 
     private Aquatic[] aquaticAnimals;
     private int nbrAqA;
@@ -82,18 +83,21 @@ public class Zoo {
     public int getNbrAnimals() {return nbrAnimals;}
     public void setNbrAnimals(int nbrAnimals) {this.nbrAnimals = nbrAnimals;}
 
-    public boolean addAnimal(Animal animal){
-        if (isZooFull()) {
-            System.out.println("Zoo is full! Cannot add more animals.");
-            return false;
+    public void addAnimal(Animal animal) throws ZooFullException , InvalidAgeException {
+
+        if (animal.getAge() < 0) {
+            throw new ZooFullException("Negative age.");
+
         }
         if (searchAnimal(animal) != -1) {
             System.out.println( animal.getName()+ " already exists.");
-            return false;
+        }
+        else  if (isZooFull()){
+            throw new ZooFullException("The Zoo is full");
         }
         animals[nbrAnimals] = animal;
         nbrAnimals++;
-        return true;
+
     }
     public int searchAnimal(Animal animal) {
            for (int i = 0; i < nbrAnimals; i++) {
