@@ -22,11 +22,14 @@ public class ZooManagement {
         myZoo.addAquaticAnimal(d2);
         myZoo.addAquaticAnimal(p2);
         myZoo.addAquaticAnimal(p3);
+
         for (int i=0; i<myZoo.getNbrAqA(); i++){
             myZoo.getAquaticAnimals()[i].swim();
         }
         System.out.println("Max swimming depth of penguins: " + myZoo.maxPenguinSwimmingDepth());
         myZoo.displayNumberOfAquaticsByType();
+        System.out.println(d1.equals(d2));
+
         /*
 
         Aquatic aquatic = new Aquatic();

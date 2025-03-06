@@ -6,8 +6,10 @@ public class Zoo {
     private String city;
     private int nbrAnimals =0;
     static final int NUMBER_OF_CAGES = 25;
+
     private Aquatic[] aquaticAnimals;
-    private int nbrAqA = 0;
+    private int nbrAqA;
+
     public Zoo(String name, String city) {
         animals = new Animal[NUMBER_OF_CAGES];
         this.name = name;
@@ -15,25 +17,18 @@ public class Zoo {
         aquaticAnimals = new Aquatic[10];
     }
 
-    public int getNbrAqA() {
-        return nbrAqA;
-    }
-    public void setNbrAqA(int nbrAqA) {
-        this.nbrAqA = nbrAqA;
-    }
     public float maxPenguinSwimmingDepth(){
         float maxDepth= 0.0f;
         for (int i = 0; i < nbrAqA; i++) {
             if (aquaticAnimals[i] instanceof Penguin p) {
-                if (p.getSwimmingDepth() > maxDepth  )
+                if (p.getSwimmingDepth() > maxDepth )
                     maxDepth = p.getSwimmingDepth();
             }
         }
         return maxDepth;
     }
     public void displayNumberOfAquaticsByType(){
-        int nbd=0;
-        int nbp=0;
+        int nbd=0; int nbp=0;
         for(Aquatic a:aquaticAnimals){
             if (a instanceof Penguin){
                 nbp++;
@@ -50,14 +45,24 @@ public class Zoo {
             nbrAqA++;
         }
         else{
-            System.out.println("tableau Plein");
+            System.out.println("Cannot add more aquatic animals.");
         }
 
     }
-    public Aquatic[] getAquaticAnimals() {return aquaticAnimals;}
+    public int getNbrAqA() {
+        return nbrAqA;
+    }
+    public void setNbrAqA(int nbrAqA) {
+        this.nbrAqA = nbrAqA;
+    }
+    public Aquatic[] getAquaticAnimals() {
+        return aquaticAnimals;
+    }
     public void setAquaticAnimals(Aquatic[] aquaticAnimal) {
+
         this.aquaticAnimals = aquaticAnimal;
     }
+
     public Animal[] getAnimals() {return animals;}
     public void setAnimals(Animal[] animals) {
         this.animals = animals;
@@ -70,6 +75,7 @@ public class Zoo {
         else
             this.name = name;
     }
+
     public String getCity() {return city;}
     public void setCity(String city) {this.city = city;}
 
@@ -108,6 +114,7 @@ public class Zoo {
         return true;
     }
     boolean isZooFull() {
+
         return nbrAnimals >= NUMBER_OF_CAGES;
     }
      public Zoo comparerZoo(Zoo z1, Zoo z2) {
@@ -121,6 +128,7 @@ public class Zoo {
       System.out.println("Name:" + name+"\nCity:" + city+"\nNumber of Cages:" +NUMBER_OF_CAGES );
     }
     public String toString() {
+
         return "name=" + name + ", city=" + city + ", nbrCage=" + NUMBER_OF_CAGES ;
     }
 }
