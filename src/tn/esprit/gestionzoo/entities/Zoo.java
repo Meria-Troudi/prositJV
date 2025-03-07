@@ -83,20 +83,20 @@ public class Zoo {
     public int getNbrAnimals() {return nbrAnimals;}
     public void setNbrAnimals(int nbrAnimals) {this.nbrAnimals = nbrAnimals;}
 
-    public void addAnimal(Animal animal) throws ZooFullException , InvalidAgeException {
-
+    public void addAnimal(Animal animal) throws ZooFullException ,InvalidAgeException  {
+        if (isZooFull()) {
+            throw new ZooFullException("The Zoo is full");
+        }
         if (animal.getAge() < 0) {
-            throw new ZooFullException("Negative age.");
-
+            throw new InvalidAgeException("Negative age.");
         }
         if (searchAnimal(animal) != -1) {
-            System.out.println( animal.getName()+ " already exists.");
-        }
-        else  if (isZooFull()){
-            throw new ZooFullException("The Zoo is full");
+            System.out.println(animal.getName() + " already exists.");
         }
         animals[nbrAnimals] = animal;
         nbrAnimals++;
+        System.out.println("Animal added: " + animal.getName());
+        System.out.println("Total animals: " + nbrAnimals);
 
     }
     public int searchAnimal(Animal animal) {
