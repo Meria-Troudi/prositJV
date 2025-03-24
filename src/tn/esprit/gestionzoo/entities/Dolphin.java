@@ -1,9 +1,7 @@
 package tn.esprit.gestionzoo.entities;
-
+import tn.esprit.gestionzoo.enums.Food;
 public class Dolphin extends Aquatic{
     private float swimmingSpeed;
-    public Dolphin() {}
-
     public Dolphin(String family, String name, int age, boolean isMammal, String habitat, float swimmingSpeed) {
         super(family, name, age, isMammal, habitat);
         this.swimmingSpeed = swimmingSpeed;
@@ -20,6 +18,10 @@ public class Dolphin extends Aquatic{
     @Override
     public String toString() {
         return super.toString() + ", Swimming Speed: " + swimmingSpeed;
+    }
+
+    public void eatMeat(Food meat) {
+
     }
 }
 

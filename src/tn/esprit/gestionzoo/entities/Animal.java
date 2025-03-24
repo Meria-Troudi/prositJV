@@ -1,6 +1,6 @@
 package tn.esprit.gestionzoo.entities;
 
-public class Animal {
+public class  Animal  {
     private String family;
     private String name;
     private int age;
