@@ -22,6 +22,7 @@ public class Penguin extends Aquatic{
         return super.toString() + ", Swimming Depth: " + swimmingDepth;
     }
     public void eatMeat(Food meat) {
+
         System.out.println("The penguin " + getName() + " is eating " + meat);
     }
 }
