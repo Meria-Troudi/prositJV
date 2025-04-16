@@ -1,26 +1,17 @@
 package tn.esprit.gestionzoo.main;
 import tn.esprit.gestionzoo.entities.*;
+import tn.esprit.gestionzoo.enums.Food;
 
 public class ZooManagement {
     public static void main(String[] args) {
-        Animal lion = new Animal("Felidae","Simba", 5, true);
-        Animal tiger = new Animal("tiger", "lili", 6, true);
-        Animal fox = new Animal("fox", "kurama", 6, true);
 
-        Zoo myZoo = new Zoo("Safari Park", "Tunis");
-        myZoo.displayZoo();
-        System.out.println("Ajout de lion : " + myZoo.addAnimal(lion));
-        System.out.println("Ajout de tiger : " + myZoo.addAnimal(tiger));
-        System.out.println("Ajout de fox : " + myZoo.addAnimal(fox));
 
-        System.out.println("lion index: " +  myZoo.searchAnimal(lion));
-        Animal lion2 = new Animal("Felidae", "Simba", 5, true);
-        System.out.println("Simba index: " + myZoo.searchAnimal(lion2));
-        System.out.println("Ajout de Simba : " + myZoo.addAnimal(lion2));
-        System.out.println("Removing tiger: " + myZoo.removeAnimal(tiger));
+        Penguin penguin = new Penguin("Mammal", "Penguin", 3, true, "Ocean", 25.6f);
+        penguin.eatMeat(Food.MEAT);
+        Dolphin dolphin = new Dolphin("Mammal", "dolphin", 5, true, "Ocean", 34.2f);
+        dolphin.eatMeat(Food.MEAT);
+        Terrestrial terrestrial = new Terrestrial("Bears", "Winnie", 6, true, 4);
+        terrestrial.eatPlantAndMeet(Food.BOTH);
 
-        Zoo Zoo2 = new Zoo("Z park ", "Carthage");
-        Zoo biggerZoo = Zoo.comparerZoo(myZoo, Zoo2);
-        System.out.println("entities.tn.esprit.gestionzoo.entities.Zoo with more animals: " + biggerZoo.getName());
 }
 }
