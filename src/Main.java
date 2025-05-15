@@ -1,7 +1,31 @@
 import java.util.*;
 public class Main {
     public static void main(String[] args) {
-        SocieteArrayList S = new SocieteArrayList();
+
+
+        DepartementHashSet departementHashSet = new DepartementHashSet();
+
+        Departement d1 = new Departement(1,50,"informatique");
+        Departement d2 = new Departement(1,50,"informatique");
+        Departement d3 = new Departement(3,10,"finance");
+        Departement d4 = new Departement(6,20,"marketing");
+        departementHashSet.ajouterDepartement(d1);
+        departementHashSet.ajouterDepartement(d2);
+        departementHashSet.ajouterDepartement(d3);
+        departementHashSet.ajouterDepartement(d4);
+
+
+        departementHashSet.displayDepartement();
+        System.out.println(departementHashSet.rechercherDepartement(d1));
+        System.out.println(departementHashSet.rechercherDepartement("finance"));
+
+        System.out.println(departementHashSet.trierDepartementById());
+        departementHashSet.supprimerDepartement(d3);
+        departementHashSet.displayDepartement();
+
+       
+
+        /*SocieteArrayList S = new SocieteArrayList();
         Employe e1 = new Employe(1, "mimi", "mimi", "RH", 16);
         Employe e2 = new Employe(2, "Ben Ali", "Salma", "Marketing", 13);
         Employe e3 = new Employe(3, "Mansour", "Ahmed", "Informatique",15);
@@ -20,6 +44,6 @@ public class Main {
         S.trierEmployeParNomDepartementEtGrade();
         S.displayEmploye();
 
-
+*/
     }
 }
